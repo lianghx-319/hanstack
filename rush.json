@@ -106,7 +106,7 @@
      *
      * This option is experimental. The default value is false.
      */
-    // "useWorkspaces": true
+    "useWorkspaces": true
   },
 
   /**
@@ -437,6 +437,10 @@
     //   // "versionPolicyName": ""
     // },
     //
+    {
+      "packageName": "@hanstack/tsconfig",
+      "projectFolder": "packages/tsconfig"
+    },
     {
       "packageName": "@vis-network/react",
       "projectFolder": "packages/vis-network/react"
