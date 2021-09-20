@@ -444,6 +444,10 @@
     {
       "packageName": "@vis-network/react",
       "projectFolder": "packages/vis-network/react"
+    },
+    {
+      "packageName": "@hanstack/eslint-config",
+      "projectFolder": "packages/eslint-config"
     }
   ]
 }
