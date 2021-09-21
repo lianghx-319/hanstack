@@ -27,7 +27,8 @@
     "@typescript-eslint/eslint-plugin": "~4.31.1",
     "@typescript-eslint/parser": "~4.31.1",
     "eslint-plugin-vue": "~7.18.0",
-    "@rushstack/eslint-patch": "~1.0.6"
+    "@rushstack/eslint-patch": "~1.0.6",
+    "eslint-plugin-react": "~7.26.0"
   },
   "devDependencies": {
     "eslint": "~7.32.0",

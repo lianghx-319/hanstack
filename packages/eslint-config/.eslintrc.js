@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ['./rush.js'],
-};
+  extends: ['./index.js'],
+}

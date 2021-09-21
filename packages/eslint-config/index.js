@@ -1,6 +1,6 @@
 module.exports = {
-	extends: [
-		'./react.js',
-		'./vue.js',
-	],
+  extends: [
+    './react.js',
+    './vue.js',
+  ],
 }
