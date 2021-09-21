@@ -14,8 +14,6 @@ A monorepo contains all of my code
 
 ### eslint
 
-### prettier
-
 ## Giiker Cube
 
 ### giiker wrapper
