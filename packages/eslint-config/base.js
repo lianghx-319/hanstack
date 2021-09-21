@@ -4,6 +4,9 @@ module.exports = {
 		browser: true,
 		node: true,
 	},
+  parserOptions: {
+    ecmaVersion: 2017
+  },
 	extends: [
 		'standard',
 		'plugin:import/recommended',
