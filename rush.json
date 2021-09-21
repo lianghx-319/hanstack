@@ -448,6 +448,14 @@
     {
       "packageName": "@hanstack/eslint-config",
       "projectFolder": "packages/eslint-config"
+    },
+    {
+      "packageName": "@hanstack/giiker",
+      "projectFolder": "packages/giiker"
+    },
+    {
+      "packageName": "@hanstack/utils",
+      "projectFolder": "packages/utils"
     }
   ]
 }

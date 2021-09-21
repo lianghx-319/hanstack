@@ -1,0 +1,19 @@
+{
+  "name": "@hanstack/utils",
+  "version": "0.0.1",
+  "description": "js utils",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup src/index.ts --dts",
+    "prepare": "pnpm run build"
+  },
+  "author": "Hanxx",
+  "license": "MIT",
+  "devDependencies": {
+    "@hanstack/eslint-config": "workspace:*",
+    "@hanstack/tsconfig": "workspace:*",
+    "tsup": "~5.1.0"
+  }
+}
