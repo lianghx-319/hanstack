@@ -4,7 +4,9 @@
   "description": "giiker js wrapper",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup src/index.ts --dts",
+    "prepare": "rushx run build"
   },
   "keywords": [
     "giiker",

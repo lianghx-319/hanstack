@@ -14,6 +14,7 @@ module.exports = {
     'plugin:jsonc/recommended-with-jsonc',
     'plugin:yml/standard',
   ],
+  ignorePatterns: ['node_modules', 'dist'],
   plugins: [
     'html',
     'unicorn',

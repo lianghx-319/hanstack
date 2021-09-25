@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsup src/index.ts --dts",
-    "prepare": "pnpm run build"
+    "prepare": "rushx run build"
   },
   "author": "Hanxx",
   "license": "MIT",
