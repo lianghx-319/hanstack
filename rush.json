@@ -16,7 +16,7 @@
    * path segment in the "$schema" field for all your Rush config files.  This will ensure
    * correct error-underlining and tab-completion for editors such as VS Code.
    */
-  "rushVersion": "5.51.1",
+  "rushVersion": "5.77.3",
 
   /**
    * The next field selects which package manager should be installed and determines its version.
@@ -26,9 +26,9 @@
    * Specify one of: "pnpmVersion", "npmVersion", or "yarnVersion".  See the Rush documentation
    * for details about these alternatives.
    */
-  "pnpmVersion": "6.7.1",
+  "pnpmVersion": "7.11.0",
 
-  // "npmVersion": "4.5.0",
+  // "npmVersion": "6.14.15",
   // "yarnVersion": "1.9.4",
 
   /**
@@ -50,7 +50,8 @@
      *
      * The default value is "local".
      */
-    // "pnpmStore": "local",
+    "pnpmStore": "global",
+
     /**
      * If true, then Rush will add the "--strict-peer-dependencies" option when invoking PNPM.
      * This causes "rush install" to fail if there are unsatisfied peer dependencies, which is
@@ -62,6 +63,7 @@
      * It is strongly recommended to set strictPeerDependencies=true.
      */
     // "strictPeerDependencies": true,
+
     /**
      * Configures the strategy used to select versions during installation.
      *
@@ -75,6 +77,7 @@
      * will recalculate all version selections.
      */
     // "resolutionStrategy": "fast",
+
     /**
      * If true, then `rush install` will report an error if manual modifications
      * were made to the PNPM shrinkwrap file without running "rush update" afterwards.
@@ -92,6 +95,7 @@
      * The default value is false.
      */
     // "preventManualShrinkwrapChanges": true,
+
     /**
      * If true, then `rush install` will use the PNPM workspaces feature to perform the
      * install.
@@ -104,7 +108,7 @@
      * range, it will be left as-is. After this, the pnpmfile.js provided in the repository (if one
      * exists) will be called to further modify package dependencies.
      *
-     * This option is experimental. The default value is false.
+     * This option is recommended. The default value is false.
      */
     "useWorkspaces": true
   },
@@ -120,7 +124,7 @@
    * LTS schedule: https://nodejs.org/en/about/releases/
    * LTS versions: https://nodejs.org/en/download/releases/
    */
-  "nodeSupportedVersionRange": ">=12.13.0 <13.0.0 || >=14.15.0 <15.0.0",
+  "nodeSupportedVersionRange": ">=16.13.0 <17.0.0",
 
   /**
    * Odd-numbered major versions of Node.js are experimental.  Even-numbered releases
@@ -185,7 +189,7 @@
    *
    * The default value is false.
    */
-  // "allowMostlyStandardPackageNames": true,
+  "allowMostlyStandardPackageNames": true,
 
   /**
    * This feature helps you to review and approve new packages before they are introduced
@@ -213,7 +217,7 @@
   //     "tools",      // non-shipping projects that are part of the developer toolchain
   //     "prototypes"  // experiments that should mostly be ignored by the review process
   //   ],
-  //
+  // 
   //   /**
   //    * A list of NPM package scopes that will be excluded from review.
   //    * We recommend to exclude TypeScript typings (the "@types" scope), because
@@ -243,12 +247,14 @@
     //   "[^@]+@users\\.noreply\\.github\\.com",
     //   "travis@example\\.org"
     // ],
+
     /**
      * When Rush reports that the address is malformed, the notice can include an example
      * of a recommended email.  Make sure it conforms to one of the allowedEmailRegExps
      * expressions.
      */
     // "sampleEmail": "mrexample@users.noreply.github.com",
+
     /**
      * The commit message to use when committing changes during 'rush publish'.
      *
@@ -256,7 +262,8 @@
      * you might configure your system's trigger to look for a special string such as "[skip-ci]"
      * in the commit message, and then customize Rush's message to contain that string.
      */
-    // "versionBumpCommitMessage": "Applying package updates. [skip-ci]",
+    // "versionBumpCommitMessage": "Bump versions [skip ci]",
+
     /**
      * The commit message to use when committing changes during 'rush version'.
      *
@@ -264,7 +271,7 @@
      * you might configure your system's trigger to look for a special string such as "[skip-ci]"
      * in the commit message, and then customize Rush's message to contain that string.
      */
-    // "changeLogUpdateCommitMessage": "Deleting change files and updating change logs for package updates. [skip-ci]"
+    // "changeLogUpdateCommitMessage": "Update changelogs [skip ci]"
   },
 
   "repository": {
@@ -272,28 +279,30 @@
      * The URL of this Git repository, used by "rush change" to determine the base branch for your PR.
      *
      * The "rush change" command needs to determine which files are affected by your PR diff.
-     * If you merged or cherry-picked commits from the master branch into your PR branch, those commits
+     * If you merged or cherry-picked commits from the main branch into your PR branch, those commits
      * should be excluded from this diff (since they belong to some other PR).  In order to do that,
      * Rush needs to know where to find the base branch for your PR.  This information cannot be
      * determined from Git alone, since the "pull request" feature is not a Git concept.  Ideally
      * Rush would use a vendor-specific protocol to query the information from GitHub, Azure DevOps, etc.
-     * But to keep things simple, "rush change" simply assumes that your PR is against the "master" branch
+     * But to keep things simple, "rush change" simply assumes that your PR is against the "main" branch
      * of the Git remote indicated by the repository.url setting in rush.json.  If you are working in
      * a GitHub "fork" of the real repo, this setting will be different from the repository URL of your
      * your PR branch, and in this situation "rush change" will also automatically invoke "git fetch"
-     * to retrieve the latest activity for the remote master branch.
+     * to retrieve the latest activity for the remote main branch.
      */
-    // "url": "https://github.com/microsoft/rush-example",
+    "url": "https://github.com/lianghx-319/hanstack",
+
     /**
      * The default branch name. This tells "rush change" which remote branch to compare against.
-     * The default value is "master"
+     * The default value is "main"
      */
-    // "defaultBranch": "master",
+    "defaultBranch": "main",
+
     /**
      * The default remote. This tells "rush change" which remote to compare against if the remote URL is
      * not set or if a remote matching the provided remote URL is not found.
      */
-    // "defaultRemote": "origin"
+    "defaultRemote": "origin"
   },
 
   /**
@@ -346,7 +355,7 @@
     //    * The folder name for this variant.
     //    */
     //   "variantName": "old-sdk",
-    //
+    // 
     //   /**
     //    * An informative description
     //    */
@@ -372,6 +381,16 @@
   // "hotfixChangeEnabled": false,
 
   /**
+    * This is an optional, but recommended, list of allowed tags that can be applied to Rush projects
+    * using the "tags" setting in this file.  This list is useful for preventing mistakes such as misspelling,
+    * and it also provides a centralized place to document your tags.  If "allowedProjectTags" list is
+    * not specified, then any valid tag is allowed.  A tag name must be one or more words
+    * separated by hyphens or slashes, where a word may contain lowercase ASCII letters, digits,
+    * ".", and "@" characters.
+    */
+  // "allowedProjectTags": [ "tools", "frontend-team", "1.0.0-release" ],
+
+  /**
    * (Required) This is the inventory of projects to be managed by Rush.
    *
    * Rush does not automatically scan for projects using wildcards, for a few reasons:
@@ -385,41 +404,59 @@
     //    * The NPM package name of the project (must match package.json)
     //    */
     //   "packageName": "my-app",
-    //
+    // 
     //   /**
     //    * The path to the project folder, relative to the rush.json config file.
     //    */
     //   "projectFolder": "apps/my-app",
-    //
+    // 
     //   /**
     //    * An optional category for usage in the "browser-approved-packages.json"
     //    * and "nonbrowser-approved-packages.json" files.  The value must be one of the
     //    * strings from the "reviewCategories" defined above.
     //    */
     //   "reviewCategory": "production",
-    //
+    // 
     //   /**
-    //    * A list of local projects that appear as devDependencies for this project, but cannot be
-    //    * locally linked because it would create a cyclic dependency; instead, the last published
-    //    * version will be installed in the Common folder.
+    //    * A list of Rush project names that are to be installed from NPM
+    //    * instead of linking to the local project.
+    //    *
+    //    * If a project's package.json specifies a dependency that is another Rush project
+    //    * in the monorepo workspace, normally Rush will locally link its folder instead of
+    //    * installing from NPM.  If you are using PNPM workspaces, this is indicated by
+    //    * a SemVer range such as "workspace:^1.2.3".  To prevent mistakes, Rush reports
+    //    * an error if the "workspace:" protocol is missing.
+    //    *
+    //    * Locally linking ensures that regressions are caught as early as possible and is
+    //    * a key benefit of monorepos.  However there are occasional situations where
+    //    * installing from NPM is needed.  A classic example is a cyclic dependency.
+    //    * Imagine three Rush projects: "my-toolchain" depends on "my-tester", which depends
+    //    * on "my-library".  Suppose that we add "my-toolchain" to the "devDependencies"
+    //    * of "my-library" so it can be built by our toolchain.  This cycle creates
+    //    * a problem -- Rush can't build a project using a not-yet-built dependency.
+    //    * We can solve it by adding "my-toolchain" to the "decoupledLocalDependencies"
+    //    * of "my-library", so it builds using the last published release.  Choose carefully
+    //    * which package to decouple; some choices are much easier to manage than others.
+    //    *
+    //    * (In older Rush releases, this setting was called "cyclicDependencyProjects".)
     //    */
-    //   "cyclicDependencyProjects": [
+    //   "decoupledLocalDependencies": [
     //     // "my-toolchain"
     //   ],
-    //
+    // 
     //   /**
     //    * If true, then this project will be ignored by the "rush check" command.
     //    * The default value is false.
     //    */
     //   // "skipRushCheck": false,
-    //
+    // 
     //   /**
     //    * A flag indicating that changes to this project will be published to npm, which affects
     //    * the Rush change and publish workflows. The default value is false.
     //    * NOTE: "versionPolicyName" and "shouldPublish" are alternatives; you cannot specify them both.
     //    */
     //   // "shouldPublish": false,
-    //
+    // 
     //   /**
     //    * Facilitates postprocessing of a project's files prior to publishing.
     //    *
@@ -428,34 +465,36 @@
     //    * must contain its own package.json file, which is typically a build output.
     //    */
     //   // "publishFolder": "temp/publish",
-    //
+    // 
     //   /**
     //    * An optional version policy associated with the project.  Version policies are defined
     //    * in "version-policies.json" file.  See the "rush publish" documentation for more info.
     //    * NOTE: "versionPolicyName" and "shouldPublish" are alternatives; you cannot specify them both.
     //    */
-    //   // "versionPolicyName": ""
+    //   // "versionPolicyName": "",
+    // 
+    //   /**
+    //    * An optional set of custom tags that can be used to select this project.  For example,
+    //    * adding "my-custom-tag" will allow this project to be selected by the
+    //    * command "rush list --only tag:my-custom-tag".  The tag name must be one or more words
+    //    * separated by hyphens or slashes, where a word may contain lowercase ASCII letters, digits,
+    //    * ".", and "@" characters.
+    //    */
+    //   // "tags": [ "1.0.0-release", "frontend-team" ]
     // },
-    //
-    {
-      "packageName": "@hanstack/tsconfig",
-      "projectFolder": "packages/tsconfig"
-    },
-    {
-      "packageName": "@vis-network/react",
-      "projectFolder": "packages/vis-network/react"
-    },
-    {
-      "packageName": "@hanstack/eslint-config",
-      "projectFolder": "packages/eslint-config"
-    },
-    {
-      "packageName": "@hanstack/giiker",
-      "projectFolder": "packages/giiker"
-    },
-    {
-      "packageName": "@hanstack/utils",
-      "projectFolder": "packages/utils"
-    }
+    // 
+    // {
+    //   "packageName": "my-controls",
+    //   "projectFolder": "libraries/my-controls",
+    //   "reviewCategory": "production",
+    //   "tags": [ "frontend-team" ]
+    // },
+    // 
+    // {
+    //   "packageName": "my-toolchain",
+    //   "projectFolder": "tools/my-toolchain",
+    //   "reviewCategory": "tools",
+    //   "tags": [ "tools" ]
+    // }
   ]
 }

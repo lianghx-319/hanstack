@@ -1,8 +1,0 @@
-{
-  "extends": "@hanstack/tsconfig/react",
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext"
-  },
-  "include": ["./src"]
-}
