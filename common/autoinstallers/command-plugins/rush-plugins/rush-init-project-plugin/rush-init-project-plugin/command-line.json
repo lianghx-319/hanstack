@@ -16,9 +16,7 @@
       "shortName": "-a",
       "longName": "--answer",
       "argumentName": "ANSWER",
-      "associatedCommands": [
-        "init-project"
-      ],
+      "associatedCommands": ["init-project"],
       "required": false
     },
     {
@@ -26,9 +24,7 @@
       "description": "Provide the option isDryRun in plugin context",
       "shortName": "-d",
       "longName": "--dry-run",
-      "associatedCommands": [
-        "init-project"
-      ],
+      "associatedCommands": ["init-project"],
       "required": false
     },
     {
@@ -36,18 +32,14 @@
       "description": "Provide verbose log output",
       "shortName": "-v",
       "longName": "--verbose",
-      "associatedCommands": [
-        "init-project"
-      ],
+      "associatedCommands": ["init-project"],
       "required": false
     },
     {
       "parameterKind": "flag",
       "description": "Provide terminal ui operation",
       "longName": "--ui",
-      "associatedCommands": [
-        "init-project"
-      ],
+      "associatedCommands": ["init-project"],
       "required": false
     }
   ]
