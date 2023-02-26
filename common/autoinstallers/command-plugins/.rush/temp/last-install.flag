@@ -1,0 +1,14 @@
+{
+  "node": "18.14.2",
+  "packageManager": "pnpm",
+  "packageManagerVersion": "7.28.0",
+  "packageJson": {
+    "name": "rush-plugins",
+    "version": "1.0.0",
+    "private": true,
+    "dependencies": {
+      "rush-init-project-plugin": "^0.7.1"
+    }
+  },
+  "rushJsonFolder": "/Users/hwangto/Code/github.com/lianghx-319/hanstack"
+}

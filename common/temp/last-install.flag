@@ -1,0 +1,9 @@
+{
+  "node": "18.14.2",
+  "packageManager": "pnpm",
+  "packageManagerVersion": "7.28.0",
+  "rushJsonFolder": "/Users/hwangto/Code/github.com/lianghx-319/hanstack",
+  "npmrcHash": "ee68e6b827bdf7ec9525260572c6fe6f94909053",
+  "storePath": "/Users/hwangto/Code/github.com/lianghx-319/hanstack/common/temp/pnpm-store",
+  "workspaces": true
+}
